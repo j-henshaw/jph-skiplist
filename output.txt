@@ -1,0 +1,1222 @@
+[jhenshaw@csslab12 ass4]$ ./create-output.sh
+Mon Feb 22 20:02:53 PST 2021
+Linux csslab12.uwb.edu 3.10.0-1160.11.1.el7.x86_64 #1 SMP Fri Dec 18 16:34:56 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+uid=1108844(jhenshaw) gid=2121108844(jhenshaw) groups=2121108844(jhenshaw),605559(lab-access)
+=====================================================
+ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR 
+clang-tidy NOT found in path (but is in /opt/rh/llvm-toolset-7.0/root/bin/clang-tidy )
+Add the following command to ~/.bashrc file
+     source scl_source enable llvm-toolset-7.0
+You can add the command by executing the following line
+     echo "source scl_source enable llvm-toolset-7.0" >> ~/.bashrc
+=====================================================
+=====================================================
+1. Compiles without warnings with -Wall -Wextra flags
+=====================================================
+=====================================================
+2. Runs and produces correct output
+=====================================================
+
+Beginning instructor-provided tests (output slightly modified).
+
+Level: 4 -- -2147483648, 2147483647, 
+
+Level: 3 -- -2147483648, 2147483647, 
+
+Level: 2 -- -2147483648, 2147483647, 
+
+Level: 1 -- -2147483648, 2147483647, 
+
+Level: 0 -- -2147483648, 2147483647, 
+
+
+Level: 4 -- -2147483648, 2147483647, 
+
+Level: 3 -- -2147483648, 2147483647, 
+
+Level: 2 -- -2147483648, 2147483647, 
+
+Level: 1 -- -2147483648, 3, 2147483647, 
+
+Level: 0 -- -2147483648, 3, 2147483647, 
+
+
+Level: 4 -- -2147483648, 2147483647, 
+
+Level: 3 -- -2147483648, 2147483647, 
+
+Level: 2 -- -2147483648, 5, 2147483647, 
+
+Level: 1 -- -2147483648, 3, 5, 2147483647, 
+
+Level: 0 -- -2147483648, 3, 5, 2147483647, 
+
+
+Level: 4 -- -2147483648, 9, 2147483647, 
+
+Level: 3 -- -2147483648, 9, 2147483647, 
+
+Level: 2 -- -2147483648, 5, 9, 2147483647, 
+
+Level: 1 -- -2147483648, 3, 5, 7, 9, 2147483647, 
+
+Level: 0 -- -2147483648, 1, 3, 5, 7, 9, 2147483647, 
+
+
+Level: 4 -- -2147483648, 9, 2147483647, 
+
+Level: 3 -- -2147483648, 9, 2147483647, 
+
+Level: 2 -- -2147483648, 5, 9, 2147483647, 
+
+Level: 1 -- -2147483648, 3, 5, 7, 9, 2147483647, 
+
+Level: 0 -- -2147483648, 1, 3, 5, 7, 9, 2147483647, 
+
+
+7 ? true
+3 ? true
+-100 ? false
+100 ? false
+
+Level: 4 -- -2147483648, 9, 2147483647, 
+
+Level: 3 -- -2147483648, 9, 2147483647, 
+
+Level: 2 -- -2147483648, 9, 2147483647, 
+
+Level: 1 -- -2147483648, 3, 7, 9, 2147483647, 
+
+Level: 0 -- -2147483648, 1, 3, 7, 9, 2147483647, 
+
+
+Done.
+
+Beginning Student's Edge Cases & Stress Test #1...
+
+*Added successfully
+*Vectors tested
+*Removement works
+*Functions in reverse
+*Destructor functions
+
+Stress Test #1 Passed!!
+
+Beginning Student's Edge Cases & Stress Test #2...
+
+*Added successfully
+*Vectors tested
+*Removement works
+*Functions in reverse
+*Destructor functions
+
+Stress Test #2 Passed!!
+
+Beginning student's string tests:
+
+*String tests for height passed
+*String tests for length and sort passed!
+
+Strings conform to standards.
+
+***Done. All tests PASSED!! :D
+
+=====================================================
+3. clang-tidy warnings are fixed
+=====================================================
+WARNING: clang-tidy not available.
+=====================================================
+4. clang-format does not find any formatting issues
+=====================================================
+Running clang-format on ./ass4.cpp
+8,9c8,9
+< //Tests provided from instructor
+< //Modified the output slightly
+---
+> // Tests provided from instructor
+> // Modified the output slightly
+11,35c11,36
+<     cout << "\nBeginning instructor-provided tests (output slightly modified).\n" << endl;
+<     // setting seed for easy testing
+<     srand(10000);
+<     SkipList skp(5, 80);
+<     cout << boolalpha;
+<     cout << skp << endl;
+<     skp.add(3);
+<     cout << skp << endl;
+<     skp.add(5);
+<     cout << skp << endl;
+<     skp.add(vector<int>{1, 7, 9});
+<     cout << skp << endl;
+<     // cannot add existing
+<     assert( !( skp.add(vector<int>{1, 7}) ) );
+<     cout << skp << endl;
+<     cout << "7 ? " << skp.contains(7) << endl;
+<     cout << "3 ? " << skp.contains(3) << endl;
+<     cout << "-100 ? " << skp.contains(-100) << endl;
+<     cout << "100 ? " << skp.contains(100) << endl << endl;
+<     bool result = skp.remove(5);
+<     assert(result);
+<     result = skp.remove(5);
+<     assert(!result);
+<     cout << skp << endl;
+<     cout << "Done." << endl << endl;
+---
+>   cout << "\nBeginning instructor-provided tests (output slightly modified).\n"
+>        << endl;
+>   // setting seed for easy testing
+>   srand(10000);
+>   SkipList skp(5, 80);
+>   cout << boolalpha;
+>   cout << skp << endl;
+>   skp.add(3);
+>   cout << skp << endl;
+>   skp.add(5);
+>   cout << skp << endl;
+>   skp.add(vector<int>{ 1, 7, 9 });
+>   cout << skp << endl;
+>   // cannot add existing
+>   assert(!(skp.add(vector<int>{ 1, 7 })));
+>   cout << skp << endl;
+>   cout << "7 ? " << skp.contains(7) << endl;
+>   cout << "3 ? " << skp.contains(3) << endl;
+>   cout << "-100 ? " << skp.contains(-100) << endl;
+>   cout << "100 ? " << skp.contains(100) << endl << endl;
+>   bool result = skp.remove(5);
+>   assert(result);
+>   result = skp.remove(5);
+>   assert(!result);
+>   cout << skp << endl;
+>   cout << "Done." << endl << endl;
+38,137c39,137
+< //Tests written by me!! For edge cases & stress test
+< void test2(){
+<     cout << "Beginning Student's Edge Cases & Stress Test #1..." << endl << endl;
+<     SkipList* list = new SkipList(20,50);
+<     
+<     //SkipList must always contain INT_MIN and INT_MAX
+<     assert( list->contains(INT_MIN) );
+<     assert( list->contains(INT_MAX) );
+<     assert( !(list->remove(INT_MIN)) );
+<     assert( !(list->remove(INT_MAX)) );
+<     assert( list->contains(INT_MIN) );
+<     assert( list->contains(INT_MAX) );
+<     
+<     //Edge cases
+<     assert( !(list->contains(INT_MIN + 1)) );
+<     assert( !(list->contains(INT_MAX - 1)) );
+<     assert( !(list->remove(INT_MIN + 1)) );
+<     assert( !(list->remove(INT_MAX - 1)) );
+<     assert( !(list->contains(INT_MIN + 1)) );
+<     assert( !(list->contains(INT_MAX - 1)) );
+<     assert( list->add(INT_MIN + 1) );
+<     assert( list->add(INT_MAX - 1) );
+<     assert( list->contains(INT_MIN + 1) );
+<     assert( list->contains(INT_MAX - 1) );
+<     assert( list->remove(INT_MIN + 1) );
+<     assert( list->remove(INT_MAX - 1) );
+<     assert( !(list->contains(INT_MIN + 1)) );
+<     assert( !(list->contains(INT_MAX - 1)) );
+<     
+<     //Stress test
+<     for (int toAdd = -10000; toAdd < 10000; ++toAdd){
+<         //cout << toAdd << " ? ";
+<         assert( !(list->contains(toAdd)) );
+<         assert(list->add(toAdd));
+<         assert(list->contains(toAdd));
+<         //cout << toAdd << endl;
+<     }
+<     //remove and add a middle value
+<     assert( list->contains(500) );
+<     assert( list->remove(500) );
+<     assert( !(list->contains(500)) );
+<     assert( list->add(500) );
+<     assert( list->contains(500) );
+<     cout << "*Added successfully" << endl;
+<     vector<int> addVector;
+<     //empty vector
+<     assert( !(list->add(addVector)) );
+<     for (int toAdd = -10000; toAdd < 10000; ++toAdd){
+<         addVector.push_back(toAdd);
+<     }
+<     //all same values
+<     assert( !(list->add(addVector)) );
+<     //one new value
+<     assert( list->remove(1000) );
+<     assert(list->add(addVector));
+<     //all same values
+<     assert( !(list->add(addVector)) );
+<     cout << "*Vectors tested" << endl;
+<     //removing
+<     for (int toRemove = -10000; toRemove < 10000; ++toRemove){
+<         assert(list->contains(toRemove));
+<         assert( !(list->add(toRemove)) );
+<         assert( list->remove(toRemove) );
+<         assert( !(list->contains(toRemove)) );
+<         assert( !(list->remove(toRemove)) );
+<     }
+<     cout << "*Removement works" << endl;
+<     
+<     //For posterity
+<     //cout << "BIG OL LIST" << endl << list;
+<     
+<     //Do it in reverse
+<     for (int toAdd = 10000; toAdd > -10000; --toAdd){
+<         assert( !(list->contains(toAdd)) );
+<         assert(list->add(toAdd));
+<         assert(list->contains(toAdd));
+<     }
+<     //remove and add a middle value
+<     assert( list->contains(500) );
+<     assert( list->remove(500) );
+<     assert( !(list->contains(500)) );
+<     assert( list->add(500) );
+<     assert( list->contains(500) );
+<     //removing
+<     for (int toRemove = 10000; toRemove > -10000; --toRemove){
+<         assert(list->contains(toRemove));
+<         assert( !(list->add(toRemove)) );
+<         assert( list->remove(toRemove) );
+<         assert( !(list->contains(toRemove)) );
+<         assert( !(list->remove(toRemove)) );
+<     }
+<     cout << "*Functions in reverse" << endl;
+<     
+<     //Add the vector back as stress test for delete
+<     assert( list->add(addVector) );
+<     delete list;
+<     cout << "*Destructor functions" << endl << endl;
+<     
+<     cout << "Stress Test #1 Passed!!" << endl << endl;
+<     
+---
+> // Tests written by me!! For edge cases & stress test
+> void test2() {
+>   cout << "Beginning Student's Edge Cases & Stress Test #1..." << endl << endl;
+>   SkipList *list = new SkipList(20, 50);
+> 
+>   // SkipList must always contain INT_MIN and INT_MAX
+>   assert(list->contains(INT_MIN));
+>   assert(list->contains(INT_MAX));
+>   assert(!(list->remove(INT_MIN)));
+>   assert(!(list->remove(INT_MAX)));
+>   assert(list->contains(INT_MIN));
+>   assert(list->contains(INT_MAX));
+> 
+>   // Edge cases
+>   assert(!(list->contains(INT_MIN + 1)));
+>   assert(!(list->contains(INT_MAX - 1)));
+>   assert(!(list->remove(INT_MIN + 1)));
+>   assert(!(list->remove(INT_MAX - 1)));
+>   assert(!(list->contains(INT_MIN + 1)));
+>   assert(!(list->contains(INT_MAX - 1)));
+>   assert(list->add(INT_MIN + 1));
+>   assert(list->add(INT_MAX - 1));
+>   assert(list->contains(INT_MIN + 1));
+>   assert(list->contains(INT_MAX - 1));
+>   assert(list->remove(INT_MIN + 1));
+>   assert(list->remove(INT_MAX - 1));
+>   assert(!(list->contains(INT_MIN + 1)));
+>   assert(!(list->contains(INT_MAX - 1)));
+> 
+>   // Stress test
+>   for (int toAdd = -10000; toAdd < 10000; ++toAdd) {
+>     // cout << toAdd << " ? ";
+>     assert(!(list->contains(toAdd)));
+>     assert(list->add(toAdd));
+>     assert(list->contains(toAdd));
+>     // cout << toAdd << endl;
+>   }
+>   // remove and add a middle value
+>   assert(list->contains(500));
+>   assert(list->remove(500));
+>   assert(!(list->contains(500)));
+>   assert(list->add(500));
+>   assert(list->contains(500));
+>   cout << "*Added successfully" << endl;
+>   vector<int> addVector;
+>   // empty vector
+>   assert(!(list->add(addVector)));
+>   for (int toAdd = -10000; toAdd < 10000; ++toAdd) {
+>     addVector.push_back(toAdd);
+>   }
+>   // all same values
+>   assert(!(list->add(addVector)));
+>   // one new value
+>   assert(list->remove(1000));
+>   assert(list->add(addVector));
+>   // all same values
+>   assert(!(list->add(addVector)));
+>   cout << "*Vectors tested" << endl;
+>   // removing
+>   for (int toRemove = -10000; toRemove < 10000; ++toRemove) {
+>     assert(list->contains(toRemove));
+>     assert(!(list->add(toRemove)));
+>     assert(list->remove(toRemove));
+>     assert(!(list->contains(toRemove)));
+>     assert(!(list->remove(toRemove)));
+>   }
+>   cout << "*Removement works" << endl;
+> 
+>   // For posterity
+>   // cout << "BIG OL LIST" << endl << list;
+> 
+>   // Do it in reverse
+>   for (int toAdd = 10000; toAdd > -10000; --toAdd) {
+>     assert(!(list->contains(toAdd)));
+>     assert(list->add(toAdd));
+>     assert(list->contains(toAdd));
+>   }
+>   // remove and add a middle value
+>   assert(list->contains(500));
+>   assert(list->remove(500));
+>   assert(!(list->contains(500)));
+>   assert(list->add(500));
+>   assert(list->contains(500));
+>   // removing
+>   for (int toRemove = 10000; toRemove > -10000; --toRemove) {
+>     assert(list->contains(toRemove));
+>     assert(!(list->add(toRemove)));
+>     assert(list->remove(toRemove));
+>     assert(!(list->contains(toRemove)));
+>     assert(!(list->remove(toRemove)));
+>   }
+>   cout << "*Functions in reverse" << endl;
+> 
+>   // Add the vector back as stress test for delete
+>   assert(list->add(addVector));
+>   delete list;
+>   cout << "*Destructor functions" << endl << endl;
+> 
+>   cout << "Stress Test #1 Passed!!" << endl << endl;
+140,238c140,238
+< //Same as test2() but with a height of 1
+< void test22(){
+<     cout << "Beginning Student's Edge Cases & Stress Test #2..." << endl << endl;
+<     SkipList* list = new SkipList(1,50);
+<     
+<     //SkipList must always contain INT_MIN and INT_MAX
+<     assert( list->contains(INT_MIN) );
+<     assert( list->contains(INT_MAX) );
+<     assert( !(list->remove(INT_MIN)) );
+<     assert( !(list->remove(INT_MAX)) );
+<     assert( list->contains(INT_MIN) );
+<     assert( list->contains(INT_MAX) );
+<     
+<     //Edge cases
+<     assert( !(list->contains(INT_MIN + 1)) );
+<     assert( !(list->contains(INT_MAX - 1)) );
+<     assert( !(list->remove(INT_MIN + 1)) );
+<     assert( !(list->remove(INT_MAX - 1)) );
+<     assert( !(list->contains(INT_MIN + 1)) );
+<     assert( !(list->contains(INT_MAX - 1)) );
+<     assert( list->add(INT_MIN + 1) );
+<     assert( list->add(INT_MAX - 1) );
+<     assert( list->contains(INT_MIN + 1) );
+<     assert( list->contains(INT_MAX - 1) );
+<     assert( list->remove(INT_MIN + 1) );
+<     assert( list->remove(INT_MAX - 1) );
+<     assert( !(list->contains(INT_MIN + 1)) );
+<     assert( !(list->contains(INT_MAX - 1)) );
+<     
+<     //Stress test
+<     for (int toAdd = -10000; toAdd < 10000; ++toAdd){
+<         //cout << toAdd << " ? ";
+<         assert( !(list->contains(toAdd)) );
+<         assert(list->add(toAdd));
+<         assert(list->contains(toAdd));
+<         //cout << toAdd << endl;
+<     }
+<     //remove and add a middle value
+<     assert( list->contains(500) );
+<     assert( list->remove(500) );
+<     assert( !(list->contains(500)) );
+<     assert( list->add(500) );
+<     assert( list->contains(500) );
+<     cout << "*Added successfully" << endl;
+<     vector<int> addVector;
+<     //empty vector
+<     assert( !(list->add(addVector)) );
+<     for (int toAdd = -10000; toAdd < 10000; ++toAdd){
+<         addVector.push_back(toAdd);
+<     }
+<     //all same values
+<     assert( !(list->add(addVector)) );
+<     //one new value
+<     assert( list->remove(1000) );
+<     assert(list->add(addVector));
+<     //all same values
+<     assert( !(list->add(addVector)) );
+<     cout << "*Vectors tested" << endl;
+<     //removing
+<     for (int toRemove = -10000; toRemove < 10000; ++toRemove){
+<         assert(list->contains(toRemove));
+<         assert( !(list->add(toRemove)) );
+<         assert( list->remove(toRemove) );
+<         assert( !(list->contains(toRemove)) );
+<         assert( !(list->remove(toRemove)) );
+<     }
+<     cout << "*Removement works" << endl;
+<     
+<     //For posterity
+<     //cout << "BIG OL LIST" << endl << list;
+<     
+<     //Do it in reverse
+<     for (int toAdd = 10000; toAdd > -10000; --toAdd){
+<         assert( !(list->contains(toAdd)) );
+<         assert(list->add(toAdd));
+<         assert(list->contains(toAdd));
+<     }
+<     //remove and add a middle value
+<     assert( list->contains(500) );
+<     assert( list->remove(500) );
+<     assert( !(list->contains(500)) );
+<     assert( list->add(500) );
+<     assert( list->contains(500) );
+<     //removing
+<     for (int toRemove = 10000; toRemove > -10000; --toRemove){
+<         assert(list->contains(toRemove));
+<         assert( !(list->add(toRemove)) );
+<         assert( list->remove(toRemove) );
+<         assert( !(list->contains(toRemove)) );
+<         assert( !(list->remove(toRemove)) );
+<     }
+<     cout << "*Functions in reverse" << endl;
+<     
+<     //Add the vector back as stress test for delete
+<     assert( list->add(addVector) );
+<     delete list;
+<     cout << "*Destructor functions" << endl << endl;
+<     
+<     cout << "Stress Test #2 Passed!!" << endl << endl;
+---
+> // Same as test2() but with a height of 1
+> void test22() {
+>   cout << "Beginning Student's Edge Cases & Stress Test #2..." << endl << endl;
+>   SkipList *list = new SkipList(1, 50);
+> 
+>   // SkipList must always contain INT_MIN and INT_MAX
+>   assert(list->contains(INT_MIN));
+>   assert(list->contains(INT_MAX));
+>   assert(!(list->remove(INT_MIN)));
+>   assert(!(list->remove(INT_MAX)));
+>   assert(list->contains(INT_MIN));
+>   assert(list->contains(INT_MAX));
+> 
+>   // Edge cases
+>   assert(!(list->contains(INT_MIN + 1)));
+>   assert(!(list->contains(INT_MAX - 1)));
+>   assert(!(list->remove(INT_MIN + 1)));
+>   assert(!(list->remove(INT_MAX - 1)));
+>   assert(!(list->contains(INT_MIN + 1)));
+>   assert(!(list->contains(INT_MAX - 1)));
+>   assert(list->add(INT_MIN + 1));
+>   assert(list->add(INT_MAX - 1));
+>   assert(list->contains(INT_MIN + 1));
+>   assert(list->contains(INT_MAX - 1));
+>   assert(list->remove(INT_MIN + 1));
+>   assert(list->remove(INT_MAX - 1));
+>   assert(!(list->contains(INT_MIN + 1)));
+>   assert(!(list->contains(INT_MAX - 1)));
+> 
+>   // Stress test
+>   for (int toAdd = -10000; toAdd < 10000; ++toAdd) {
+>     // cout << toAdd << " ? ";
+>     assert(!(list->contains(toAdd)));
+>     assert(list->add(toAdd));
+>     assert(list->contains(toAdd));
+>     // cout << toAdd << endl;
+>   }
+>   // remove and add a middle value
+>   assert(list->contains(500));
+>   assert(list->remove(500));
+>   assert(!(list->contains(500)));
+>   assert(list->add(500));
+>   assert(list->contains(500));
+>   cout << "*Added successfully" << endl;
+>   vector<int> addVector;
+>   // empty vector
+>   assert(!(list->add(addVector)));
+>   for (int toAdd = -10000; toAdd < 10000; ++toAdd) {
+>     addVector.push_back(toAdd);
+>   }
+>   // all same values
+>   assert(!(list->add(addVector)));
+>   // one new value
+>   assert(list->remove(1000));
+>   assert(list->add(addVector));
+>   // all same values
+>   assert(!(list->add(addVector)));
+>   cout << "*Vectors tested" << endl;
+>   // removing
+>   for (int toRemove = -10000; toRemove < 10000; ++toRemove) {
+>     assert(list->contains(toRemove));
+>     assert(!(list->add(toRemove)));
+>     assert(list->remove(toRemove));
+>     assert(!(list->contains(toRemove)));
+>     assert(!(list->remove(toRemove)));
+>   }
+>   cout << "*Removement works" << endl;
+> 
+>   // For posterity
+>   // cout << "BIG OL LIST" << endl << list;
+> 
+>   // Do it in reverse
+>   for (int toAdd = 10000; toAdd > -10000; --toAdd) {
+>     assert(!(list->contains(toAdd)));
+>     assert(list->add(toAdd));
+>     assert(list->contains(toAdd));
+>   }
+>   // remove and add a middle value
+>   assert(list->contains(500));
+>   assert(list->remove(500));
+>   assert(!(list->contains(500)));
+>   assert(list->add(500));
+>   assert(list->contains(500));
+>   // removing
+>   for (int toRemove = 10000; toRemove > -10000; --toRemove) {
+>     assert(list->contains(toRemove));
+>     assert(!(list->add(toRemove)));
+>     assert(list->remove(toRemove));
+>     assert(!(list->contains(toRemove)));
+>     assert(!(list->remove(toRemove)));
+>   }
+>   cout << "*Functions in reverse" << endl;
+> 
+>   // Add the vector back as stress test for delete
+>   assert(list->add(addVector));
+>   delete list;
+>   cout << "*Destructor functions" << endl << endl;
+> 
+>   cout << "Stress Test #2 Passed!!" << endl << endl;
+240a241,243
+> // Some string tests
+> void test3() {
+>   cout << "Beginning student's string tests:\n" << endl;
+242,278c245,275
+< //Some string tests
+< void test3(){
+<     cout << "Beginning student's string tests:\n" << endl;
+<     
+<     //Check that verticality is maintained properly
+<     for(int listHeight = 1; listHeight < 11; ++listHeight){
+<         SkipList list(listHeight,50);
+<         string expected = "";
+<         for(int stringLevel = listHeight - 1; stringLevel >= 0; --stringLevel){
+<             expected += "Level: ";
+<             expected += to_string(stringLevel);
+<             expected += " -- -2147483648, 2147483647, \n\n";
+<         }
+<         assert( list.toString() == expected );
+<         
+<     }
+<     cout << "*String tests for height passed" << endl;
+<     
+<     //Check that length and sort is maintained
+<     SkipList list2(1,50);
+<     int values[] = {-50,400,33,-200,0};
+<     string results[] = {
+<         "Level: 0 -- -2147483648, 2147483647, \n\n",
+<         "Level: 0 -- -2147483648, -50, 2147483647, \n\n",
+<         "Level: 0 -- -2147483648, -50, 400, 2147483647, \n\n",
+<         "Level: 0 -- -2147483648, -50, 33, 400, 2147483647, \n\n",
+<         "Level: 0 -- -2147483648, -200, -50, 33, 400, 2147483647, \n\n",
+<         "Level: 0 -- -2147483648, -200, -50, 33, 0, 400, 2147483647, \n\n",
+<     };
+<     for (int i = 0; i < 5; ++i) {
+<         assert( list2.toString() == results[i] );
+<         assert( list2.add(values[i]) );
+<     }
+<     
+<     cout << "*String tests for length and sort passed!\n" << endl;
+<     cout << "Strings conform to standards." << endl << endl;
+<     
+---
+>   // Check that verticality is maintained properly
+>   for (int listHeight = 1; listHeight < 11; ++listHeight) {
+>     SkipList list(listHeight, 50);
+>     string expected = "";
+>     for (int stringLevel = listHeight - 1; stringLevel >= 0; --stringLevel) {
+>       expected += "Level: ";
+>       expected += to_string(stringLevel);
+>       expected += " -- -2147483648, 2147483647, \n\n";
+>     }
+>     assert(list.toString() == expected);
+>   }
+>   cout << "*String tests for height passed" << endl;
+> 
+>   // Check that length and sort is maintained
+>   SkipList list2(1, 50);
+>   int values[] = { -50, 400, 33, -200, 0 };
+>   string results[] = {
+>     "Level: 0 -- -2147483648, 2147483647, \n\n",
+>     "Level: 0 -- -2147483648, -50, 2147483647, \n\n",
+>     "Level: 0 -- -2147483648, -50, 400, 2147483647, \n\n",
+>     "Level: 0 -- -2147483648, -50, 33, 400, 2147483647, \n\n",
+>     "Level: 0 -- -2147483648, -200, -50, 33, 400, 2147483647, \n\n",
+>     "Level: 0 -- -2147483648, -200, -50, 33, 0, 400, 2147483647, \n\n",
+>   };
+>   for (int i = 0; i < 5; ++i) {
+>     assert(list2.toString() == results[i]);
+>     assert(list2.add(values[i]));
+>   }
+> 
+>   cout << "*String tests for length and sort passed!\n" << endl;
+>   cout << "Strings conform to standards." << endl << endl;
+281c278
+< //Run all tests
+---
+> // Run all tests
+283,288c280,285
+<     test1();
+<     test2();
+<     test22();
+<     test3();
+<     cout << "***Done. All tests PASSED!! :D" << endl << endl;
+<     return 0;
+---
+>   test1();
+>   test2();
+>   test22();
+>   test3();
+>   cout << "***Done. All tests PASSED!! :D" << endl << endl;
+>   return 0;
+Running clang-format on ./skiplist.cpp
+5c5
+<  
+---
+> 
+7,8c7,9
+<  can search and insert in O(log(n)) time: https://en.wikipedia.org/wiki/Skip_list
+<  
+---
+>  can search and insert in O(log(n)) time:
+>  https://en.wikipedia.org/wiki/Skip_list
+> 
+13c14
+<  
+---
+> 
+15c16
+<  
+---
+> 
+25c26
+< //SNODE METHODS//
+---
+> // SNODE METHODS//
+28,31c29,32
+< //Prints the value of the node's data field only
+< ostream &operator<<(ostream &out, const SNode& node){
+<     out << (node.toString());
+<     return out;
+---
+> // Prints the value of the node's data field only
+> ostream &operator<<(ostream &out, const SNode &node) {
+>   out << (node.toString());
+>   return out;
+34,39c35,40
+< //Constructor
+< SNode::SNode(int value) : data{value} {
+<     right = nullptr;
+<     left = nullptr;
+<     up = nullptr;
+<     down = nullptr;
+---
+> // Constructor
+> SNode::SNode(int value) : data{ value } {
+>   right = nullptr;
+>   left = nullptr;
+>   up = nullptr;
+>   down = nullptr;
+42c43
+< //Retruns this SNode's data field as a string
+---
+> // Retruns this SNode's data field as a string
+45d45
+< 
+47c47
+< //PUBLIC METHODS//
+---
+> // PUBLIC METHODS//
+50,70c50,70
+< //Prints all data from every possible row of the SkipList
+< //Every row of every SkipList always contains INT_MIN and INT_MAX,
+< //even if no other values have been added to that row. As a result,
+< //this operator becomes unwieldy at high values for maxLevel
+< ostream &operator<<(ostream& out, const SkipList& skip) {
+<     out << skip.toString();
+<     return out;
+< }
+< 
+< //Constructor: Default SkipList
+< //Has only 1 level, just one doubly-linked list
+< //To deliver on O(log(n)) behavior:
+< //maxLevel should be log(expected size), and probability = 50
+< //Every SkipList always contains INT_MIN and INT_MAX
+< //maxLevel can be on range [1,INT_MAX]
+< //probability can be on range [0,99]
+< SkipList::SkipList(int maxLevel, int probability){
+<     assert(maxLevel > 0 && probability >= 0 && probability < 100);
+<     this->maxLevel = maxLevel;
+<     this->probability = probability;
+<     head = new SNode(INT_MIN);
+---
+> // Prints all data from every possible row of the SkipList
+> // Every row of every SkipList always contains INT_MIN and INT_MAX,
+> // even if no other values have been added to that row. As a result,
+> // this operator becomes unwieldy at high values for maxLevel
+> ostream &operator<<(ostream &out, const SkipList &skip) {
+>   out << skip.toString();
+>   return out;
+> }
+> 
+> // Constructor: Default SkipList
+> // Has only 1 level, just one doubly-linked list
+> // To deliver on O(log(n)) behavior:
+> // maxLevel should be log(expected size), and probability = 50
+> // Every SkipList always contains INT_MIN and INT_MAX
+> // maxLevel can be on range [1,INT_MAX]
+> // probability can be on range [0,99]
+> SkipList::SkipList(int maxLevel, int probability) {
+>   assert(maxLevel > 0 && probability >= 0 && probability < 100);
+>   this->maxLevel = maxLevel;
+>   this->probability = probability;
+>   head = new SNode(INT_MIN);
+73c73
+< //Destructor
+---
+> // Destructor
+75,82c75,84
+<     //Clear contents
+<     while (head->right != nullptr) { remove(head->right->data); }
+<     //Remove guards
+<     while (head != nullptr){
+<         SNode* temp = head;
+<         head = head->up;
+<         delete temp;
+<     }
+---
+>   // Clear contents
+>   while (head->right != nullptr) {
+>     remove(head->right->data);
+>   }
+>   // Remove guards
+>   while (head != nullptr) {
+>     SNode *temp = head;
+>     head = head->up;
+>     delete temp;
+>   }
+85,87c87,89
+< //Returns true if successfully added, otherwise returns false.
+< //No duplicates allowed in the SkipList
+< //Every SkipList always contains INT_MIN and INT_MAX
+---
+> // Returns true if successfully added, otherwise returns false.
+> // No duplicates allowed in the SkipList
+> // Every SkipList always contains INT_MIN and INT_MAX
+89,112c91,118
+<     //Can't add guard vals
+<     if (value == INT_MIN || value == INT_MAX) { return false; }
+<     
+<     //Get pointer to the SNode on the bottom row that is <= our value
+<     SNode* preceedingNode = closestSNode(value);
+<     
+<     //SkipList cannot contain duplicates
+<     if (preceedingNode->data == value) { return false; }
+<     
+<     //Insert the new value
+<     SNode* temp = new SNode(value);
+<     addAfter(preceedingNode, temp);
+<     
+<     //Build upwards from temp
+<     buildUp(temp);
+<     
+<     //We've added!
+<     return true;
+< }
+< 
+< //Attempts to add each element from the vector to the SkipList.
+< //Returns true if any value was successfully added, false if
+< //the list remains unchanged. No duplicates are allowed in a
+< //SkipList, and every SkipList always contains INT_MIN and INT_MAX
+---
+>   // Can't add guard vals
+>   if (value == INT_MIN || value == INT_MAX) {
+>     return false;
+>   }
+> 
+>   // Get pointer to the SNode on the bottom row that is <= our value
+>   SNode *preceedingNode = closestSNode(value);
+> 
+>   // SkipList cannot contain duplicates
+>   if (preceedingNode->data == value) {
+>     return false;
+>   }
+> 
+>   // Insert the new value
+>   SNode *temp = new SNode(value);
+>   addAfter(preceedingNode, temp);
+> 
+>   // Build upwards from temp
+>   buildUp(temp);
+> 
+>   // We've added!
+>   return true;
+> }
+> 
+> // Attempts to add each element from the vector to the SkipList.
+> // Returns true if any value was successfully added, false if
+> // the list remains unchanged. No duplicates are allowed in a
+> // SkipList, and every SkipList always contains INT_MIN and INT_MAX
+114,117c120,124
+<     bool anyAdded = false;
+<     
+<     for (int i = 0; i < values.size(); ++i){
+<         if (add(values[i])) { anyAdded = true;}
+---
+>   bool anyAdded = false;
+> 
+>   for (int i = 0; i < values.size(); ++i) {
+>     if (add(values[i])) {
+>       anyAdded = true;
+119,120c126,128
+<     
+<     return anyAdded;
+---
+>   }
+> 
+>   return anyAdded;
+123,127c131,135
+< //Attempts to find and remove the given integer from the SkipList.
+< //If it is found, it will be removed, and true will be returned.
+< //Otherwise, the list will remain unchanged, and returns false.
+< //However, if you attempt to remove INT_MIN or INT_MAX, the list
+< //will remain unchanged and returns false
+---
+> // Attempts to find and remove the given integer from the SkipList.
+> // If it is found, it will be removed, and true will be returned.
+> // Otherwise, the list will remain unchanged, and returns false.
+> // However, if you attempt to remove INT_MIN or INT_MAX, the list
+> // will remain unchanged and returns false
+129,151c137,155
+<     //We can't remove the guards
+<     if (data == INT_MIN || data == INT_MAX) { return false; }
+<     
+<     //Get the node on the bottom row <= our desired value
+<     SNode* targetNode = closestSNode(data);
+<     
+<     //If this is not what we were trying to remove, return false
+<     if (targetNode->data != data) { return false; }
+<     
+<     //Delete this node and all above it
+<     while(targetNode != nullptr){
+<         //Remove targetNode from this row
+<         targetNode->left->right = targetNode->right;
+<         if(targetNode->right != nullptr){
+<             targetNode->right->left = targetNode->left;
+<         }
+<         
+<         //Save a reference to current targetNode
+<         SNode* temp = targetNode;
+<         //Go up
+<         targetNode = targetNode->up;
+<         //Delete that targetNode
+<         delete temp;
+---
+>   // We can't remove the guards
+>   if (data == INT_MIN || data == INT_MAX) {
+>     return false;
+>   }
+> 
+>   // Get the node on the bottom row <= our desired value
+>   SNode *targetNode = closestSNode(data);
+> 
+>   // If this is not what we were trying to remove, return false
+>   if (targetNode->data != data) {
+>     return false;
+>   }
+> 
+>   // Delete this node and all above it
+>   while (targetNode != nullptr) {
+>     // Remove targetNode from this row
+>     targetNode->left->right = targetNode->right;
+>     if (targetNode->right != nullptr) {
+>       targetNode->right->left = targetNode->left;
+153,155c157,167
+<     
+<     //We did it!
+<     return true;
+---
+> 
+>     // Save a reference to current targetNode
+>     SNode *temp = targetNode;
+>     // Go up
+>     targetNode = targetNode->up;
+>     // Delete that targetNode
+>     delete temp;
+>   }
+> 
+>   // We did it!
+>   return true;
+158,159c170,171
+< //Returns true if the value is contained in SkipList
+< //Every SkipList always contains INT_MIN and INT_MAX
+---
+> // Returns true if the value is contained in SkipList
+> // Every SkipList always contains INT_MIN and INT_MAX
+161,164c173,178
+<     //Every skiplist contains INT_MIN and INT_MAX
+<     if (data == INT_MIN || data == INT_MAX) { return true; }
+<     
+<     return ( ( (closestSNode(data))->data ) == data );
+---
+>   // Every skiplist contains INT_MIN and INT_MAX
+>   if (data == INT_MIN || data == INT_MAX) {
+>     return true;
+>   }
+> 
+>   return (((closestSNode(data))->data) == data);
+167,170c181,184
+< //Provides a string representation of this SkipList
+< //Every row of every SkipList always contains INT_MIN and INT_MAX,
+< //even if no other values have been added to that row. As a result,
+< //this function becomes unwieldy at high values for maxLevel
+---
+> // Provides a string representation of this SkipList
+> // Every row of every SkipList always contains INT_MIN and INT_MAX,
+> // even if no other values have been added to that row. As a result,
+> // this function becomes unwieldy at high values for maxLevel
+172,184c186,212
+<     int height = 0;
+<     SNode* guardian = head;
+<     //Get the guard for the top row
+<     while(guardian->up != nullptr){
+<         guardian = guardian->up;
+<         ++height;
+<     }
+<     
+<     //We don't actually store unused rows
+<     string result = "";
+<     for (int extraRows = (maxLevel - 1); extraRows > height; --extraRows) {
+<         result.append("Level: " + to_string(extraRows) + " -- ");
+<         result.append(to_string(INT_MIN) + ", " + to_string(INT_MAX) + ", \n\n");
+---
+>   int height = 0;
+>   SNode *guardian = head;
+>   // Get the guard for the top row
+>   while (guardian->up != nullptr) {
+>     guardian = guardian->up;
+>     ++height;
+>   }
+> 
+>   // We don't actually store unused rows
+>   string result = "";
+>   for (int extraRows = (maxLevel - 1); extraRows > height; --extraRows) {
+>     result.append("Level: " + to_string(extraRows) + " -- ");
+>     result.append(to_string(INT_MIN) + ", " + to_string(INT_MAX) + ", \n\n");
+>   }
+> 
+>   // Concatenate each row
+>   for (int currRow = height; currRow >= 0; --currRow) {
+>     // Concatenate row header
+>     result.append("Level: " + to_string(currRow) + " -- ");
+> 
+>     // Look at the first value in this row
+>     SNode *currentNode = guardian;
+> 
+>     // Print each value on this row
+>     while (currentNode != nullptr) {
+>       result.append(to_string(currentNode->data) + ", ");
+>       currentNode = currentNode->right;
+186,208c214,215
+<     
+<     //Concatenate each row
+<     for(int currRow = height; currRow >= 0; --currRow){
+<         //Concatenate row header
+<         result.append("Level: " + to_string(currRow) + " -- ");
+<         
+<         //Look at the first value in this row
+<         SNode* currentNode = guardian;
+<         
+<         //Print each value on this row
+<         while (currentNode != nullptr){
+<             result.append(to_string(currentNode->data) + ", ");
+<             currentNode = currentNode->right;
+<         }
+<         //INT_MAX is not actually stored
+<         result.append(to_string(INT_MAX) + ", \n\n");
+<         
+<         //go to the next row down
+<         guardian = guardian->down;
+<     }
+<     
+<     return result;
+< }
+---
+>     // INT_MAX is not actually stored
+>     result.append(to_string(INT_MAX) + ", \n\n");
+209a217,222
+>     // go to the next row down
+>     guardian = guardian->down;
+>   }
+> 
+>   return result;
+> }
+212c225
+< //PRIVATE METHODS//
+---
+> // PRIVATE METHODS//
+215,222c228,237
+< //Given a newNode, place it after the given prevNode
+< //Does not modify up/down pointers, only left/right
+< void SkipList::addAfter(SNode* prevNode, SNode* newNode) {
+<     newNode->right = prevNode->right;
+<     newNode->left = prevNode;
+<     
+<     prevNode->right = newNode;
+<     if (newNode->right != nullptr) { newNode->right->left = newNode; }
+---
+> // Given a newNode, place it after the given prevNode
+> // Does not modify up/down pointers, only left/right
+> void SkipList::addAfter(SNode *prevNode, SNode *newNode) {
+>   newNode->right = prevNode->right;
+>   newNode->left = prevNode;
+> 
+>   prevNode->right = newNode;
+>   if (newNode->right != nullptr) {
+>     newNode->right->left = newNode;
+>   }
+225,226c240,241
+< //Returns true probability% of time
+< //If probability == 50, returns true 50% of the time
+---
+> // Returns true probability% of time
+> // If probability == 50, returns true 50% of the time
+231,264c246,261
+< //Probabilistically builds higher levels for given node, and all
+< //requisite connections. Height will not exceed maxLevel
+< void SkipList::buildUp(SNode* baseNode){
+<     SNode* guardian = head;
+<     int level = 1;
+<     while(shouldInsertAtHigher() && (level < maxLevel) ){
+<         //Build up Left guard if necessary
+<         if (guardian->up == nullptr){
+<             guardian->up = new SNode(INT_MIN);
+<             guardian->up->down = guardian;
+<         }
+<         
+<         //Get closest node on the left that goes up
+<         SNode* leftest = baseNode;
+<         while( (leftest->left != nullptr) && (leftest->up == nullptr) ){
+<             leftest = leftest->left;
+<         }
+<         //And go up from it
+<         leftest = leftest->up;
+<         
+<         //Add one row up, and connect
+<         baseNode->up = new SNode(baseNode->data);
+<         baseNode->up->down = baseNode;
+<         baseNode = baseNode->up;
+<         addAfter(leftest, baseNode);
+<         
+<         //Move up on the guardrail
+<         guardian = guardian->up;
+<         //Connect to guardrail if necessary
+<         if(leftest->left == nullptr && leftest->data != INT_MIN){
+<             leftest->left = guardian;
+<             guardian->right = leftest;
+<         }
+<         ++level;
+---
+> // Probabilistically builds higher levels for given node, and all
+> // requisite connections. Height will not exceed maxLevel
+> void SkipList::buildUp(SNode *baseNode) {
+>   SNode *guardian = head;
+>   int level = 1;
+>   while (shouldInsertAtHigher() && (level < maxLevel)) {
+>     // Build up Left guard if necessary
+>     if (guardian->up == nullptr) {
+>       guardian->up = new SNode(INT_MIN);
+>       guardian->up->down = guardian;
+>     }
+> 
+>     // Get closest node on the left that goes up
+>     SNode *leftest = baseNode;
+>     while ((leftest->left != nullptr) && (leftest->up == nullptr)) {
+>       leftest = leftest->left;
+265a263,280
+>     // And go up from it
+>     leftest = leftest->up;
+> 
+>     // Add one row up, and connect
+>     baseNode->up = new SNode(baseNode->data);
+>     baseNode->up->down = baseNode;
+>     baseNode = baseNode->up;
+>     addAfter(leftest, baseNode);
+> 
+>     // Move up on the guardrail
+>     guardian = guardian->up;
+>     // Connect to guardrail if necessary
+>     if (leftest->left == nullptr && leftest->data != INT_MIN) {
+>       leftest->left = guardian;
+>       guardian->right = leftest;
+>     }
+>     ++level;
+>   }
+268,277c283,298
+< //Returns a pointer to the SNode on the bottom row of the
+< //SkipList who's data value is the greatest in the list still
+< //satisfying: (data <= value)
+< SNode* SkipList::closestSNode(int value) const {
+<     //Get pointer to the top row's left guard
+<     SNode* toCompare = head;
+<     int height = 0;
+<     while (toCompare->up != nullptr){
+<         toCompare = toCompare->up;
+<         ++height;
+---
+> // Returns a pointer to the SNode on the bottom row of the
+> // SkipList who's data value is the greatest in the list still
+> // satisfying: (data <= value)
+> SNode *SkipList::closestSNode(int value) const {
+>   // Get pointer to the top row's left guard
+>   SNode *toCompare = head;
+>   int height = 0;
+>   while (toCompare->up != nullptr) {
+>     toCompare = toCompare->up;
+>     ++height;
+>   }
+> 
+>   for (int currRow = height; currRow >= 0; --currRow) {
+>     // Find the greatest element in this row that is <= our value
+>     while (toCompare->right != nullptr && toCompare->right->data <= value) {
+>       toCompare = toCompare->right;
+279,287c300,302
+<     
+<     for(int currRow = height; currRow >= 0; --currRow){
+<         //Find the greatest element in this row that is <= our value
+<         while (toCompare->right != nullptr &&
+<                toCompare->right->data <= value) {
+<             toCompare = toCompare->right;
+<         }
+<         //Move down to the next row
+<         if(toCompare->down != nullptr) { toCompare = toCompare->down; }
+---
+>     // Move down to the next row
+>     if (toCompare->down != nullptr) {
+>       toCompare = toCompare->down;
+289,290c304,306
+<     
+<     return toCompare;
+---
+>   }
+> 
+>   return toCompare;
+293c309
+< #endif //ASS4_SKIPLIST_CPP
+---
+> #endif // ASS4_SKIPLIST_CPP
+=====================================================
+5. No memory leaks using g++
+=====================================================
